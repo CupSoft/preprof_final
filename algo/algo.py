@@ -11,6 +11,7 @@ def process_mission(points):
     base_weight = 192
     use_oxi = 0
     use_power_percent = 0
+    ind = 1
     for point in points:
         now_sh = 8
         now_dist_to = point["distance"]
@@ -79,6 +80,6 @@ def process_mission(points):
                 use_power_percent += r_power
                 day += 1
                 use_power_percent += 20
-        results_point.append(PointPD(day=day, current_power=use_power_percent, current_oxi=use_oxi))
-
+        results_point.append(PointPD(num=ind, day=day, current_power=use_power_percent, current_oxi=use_oxi))
+        ind += 1
     return (results, results_point)
