@@ -2,7 +2,7 @@ from algo.shemas import DayPD
 
 
 def process_mission(points):
-    result = DayPD()
+    results = []
     day = 1
     base_weight = 192
     use_oxi = 0
@@ -66,7 +66,3 @@ def process_mission(points):
 
             print(day)
             print(use_oxi, use_power_percent)
-
-
-
-
