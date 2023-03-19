@@ -8,11 +8,13 @@
     </div>
   <div class="all_points">
     Все точки маршрута<br>
-
+    {{point}}
     {% for point in output_data[1] %}
       Точка номер {{point.num}}
     <div>
-      {{point}}
+      {{point}}<br>
+      {{point.current_power * 10 + point.current_oxi * 7}}
+
     </div>
     <br>
     {% endfor %}
