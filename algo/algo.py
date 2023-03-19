@@ -4,6 +4,7 @@ from math import sin, pi
 
 def process_mission(points):
     results = []
+    results_point = []
     day = 1
     base_weight = 192
     use_oxi = 0
@@ -76,5 +77,6 @@ def process_mission(points):
                 use_power_percent += r_power
                 day += 1
                 use_power_percent += 20
+        results_point.appent(PointPD(day=day, current_power=use_power_percent, current_oxi=use_oxi))
 
-    return results
+    return (results, results_point)
