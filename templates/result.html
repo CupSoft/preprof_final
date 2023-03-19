@@ -1,17 +1,21 @@
 {% extends "base.html" %} {% block content %}
 <div>
   <h2>Результаты расчетов:</h2>
-  <div class='day_info'>{{output_data}}</div>
-  <div class='all_points'>
-    {% for point in output_data.points %}
-    
+  <div class="day_info">{{output_data[0]}}</div>
+  <div class="all_points">
+    {% for point in output_data[1] %}
+    <div>
+      {{point}}
+    </div>
+    {% endfor %}
+    </div>
+
+    <form action="/save" method="post">
+      <input hidden name="input_data" value="{{input_data}}" />
+      <input hidden name="output_data" value="{{output_data}}" />
+
+      <input type="submit" value="Сохранить расчетв базу данных" />
+    </form>
   </div>
-
-  <form action="/save" method="post">
-    <input hidden name="input_data" value="{{input_data}}" />
-    <input hidden name="output_data" value="{{output_data}}" />
-
-    <input type="submit" value="Сохранить расчетв базу данных" />
-  </form>
+  {% endblock %}
 </div>
-{% endblock %}

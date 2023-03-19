@@ -13,7 +13,6 @@ class DayPD(BaseModel):
 
 
 class PointPD(BaseModel):
-    num: int | None
     day: int | None
     current_power: int | None
     current_oxi: int | None

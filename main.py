@@ -13,7 +13,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = settings.DB_URL
 db.init_app(app)
 
 
-# from models.users import User
+from models.calcs import Calc
 
 with app.app_context():
     db.create_all()

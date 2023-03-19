@@ -40,11 +40,15 @@ def calculate():
         r = requests.get(url, headers=headers)
 
         if r.status_code == 200:
-            input_data = r.json()
-            output_data = {}
+            input_data = r.json()["message"]
+            input_data = input_data[0]["points"]
+            print(input_data)
+            output_data = algo.process_mission(input_data)
 
             return render_template(
                 "result.html", input_data=input_data, output_data=output_data
             )
         else:
             return render_template("fail.html")
+
+
