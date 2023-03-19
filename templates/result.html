@@ -1,12 +1,20 @@
 {% extends "base.html" %} {% block content %}
 <div>
   <h2>Результаты расчетов:</h2>
-  <div class="day_info">{{output_data[0]}}</div>
+
+    <div>
+Информация в интересующий день:
+{{dayinfo}}
+    </div>
   <div class="all_points">
+    Все точки маршрута<br>
+
     {% for point in output_data[1] %}
+      Точка номер {{point.num}}
     <div>
       {{point}}
     </div>
+    <br>
     {% endfor %}
     </div>
 

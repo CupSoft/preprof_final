@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect
 from flask_login import login_required, current_user
 import requests
 from algo import algo
@@ -7,6 +7,12 @@ from models.calcs import Calc
 
 
 home = Blueprint("home", __name__)
+
+@home.route("/saves")
+def saves():
+    allsaves = Calc.query.all()
+
+    return render_template("saves.html", allsaves=allsaves)
 
 
 @home.route("/")
@@ -24,9 +30,7 @@ def save_calc():
     db.session.add(calc)
     db.session.commit()
 
-    return render_template(
-        "result.html", input_data=input_data, output_data=output_data
-    )
+    return redirect("http://0.0.0.0:8000/")
 
 
 @home.route("/calculate")
@@ -41,12 +45,22 @@ def calculate():
 
         if r.status_code == 200:
             input_data = r.json()["message"]
-            input_data = input_data[0]["points"]
+            input_data = input_data[int(request.args.get("testnum"))]["points"]
             print(input_data)
             output_data = algo.process_mission(input_data)
 
+            dayinfo = 'инфа не запрашивается'
+
+            if not (request.args.get("day_input") is None):
+                for i in output_data[0]:
+                    if i.num == int(request.args.get("day_input")):
+                        dayinfo = i
+
+                        
+                
+
             return render_template(
-                "result.html", input_data=input_data, output_data=output_data
+                "result.html", input_data=input_data, output_data=output_data, dayinfo=dayinfo
             )
         else:
             return render_template("fail.html")

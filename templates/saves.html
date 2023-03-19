@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<div>
+  <h2>Сохраненные расчеты</h2>
+  {% for calc in allsaves %}
+  {{ calc }}
+  <br>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,21 +1,31 @@
 {% extends "base.html" %} {% block content %}
+<a href="http://0.0.0.0:8000/saves">Сохраненные расчеты</a>
 <div>
   <h2>Введите URL сервера или вставьте задание вручную:</h2>
   <div>
     <p>Введите URL и токен:</p>
     <form action="/calculate" method="get">
-      <input id="url_input" name="url" placeholder="https://dt.miet.ru/ppo_it_final" required >
-      <input id="token_input" name="token" placeholder="alskjdlkajsd" >
+      <input
+        id="url_input"
+        name="url"
+        placeholder="https://dt.miet.ru/ppo_it_final"
+        required
+      />
+      <input id="token_input" name="token" placeholder="alskjdlkajsd" />
+      <input id="testnum" name="testnum" type="number" placeholder="0" />
+
+      <input id="day_input" name="day_input" type="number" placeholder="2" />
 
       <input type="submit" value="Получить задание и расчитать" />
     </form>
   </div>
+  <!--
   <div>
     <p>или JSON задание:</p>
     <form action="/calculate" method="get">
       <textarea id="json" name="json" placeholder="JSON"></textarea>
       <input type="submit" value="Рассчитать" />
     </form>
-  </div>
+  </div>-->
   <div>{% endblock %}</div>
 </div>
