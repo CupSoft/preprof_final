@@ -20,6 +20,6 @@ with app.app_context():
 
 
 # Blueprints
-from bluerprints import home as index_blueprint
+from bluerprints import home as home_blueprint
 
-app.register_blueprint(index_blueprint.index_bp)
+app.register_blueprint(home_blueprint.home)

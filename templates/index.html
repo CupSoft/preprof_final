@@ -1,12 +1,20 @@
-<!-- templates/index.html -->
-
-{% extends "base.html" %}
-
-{% block content %}
-<h1 class="title">
-  Калькулятор ресурсов для космического корабля
-</h1>
+{% extends "base.html" %} {% block content %}
 <div>
-  
+  <h2>Введите маршрут одним из следующих способов:</h2>
+  <div>
+    <p>Введите URL и токен:</p>
+    <form action="/calculate" method="post">
+      <input type="text" name="url" placeholder="URL" />
+      <input type="text" name="token" placeholder="Токен" />
+      <input type="submit" value="Рассчитать" />
+    </form>
+  </div>
+  <div>
+    <p>Введите JSON:</p>
+    <form action="/calculate" method="post">
+      <textarea name="json" placeholder="JSON"></textarea>
+      <input type="submit" value="Рассчитать" />
+    </form>
+  </div>
+  <div>{% endblock %}</div>
 </div>
-{% endblock %}
