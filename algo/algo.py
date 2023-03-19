@@ -77,5 +77,4 @@ def process_mission(points):
                 day += 1
                 use_power_percent += 20
 
-            print(day)
-            print(use_oxi, use_power_percent)
+    return results
