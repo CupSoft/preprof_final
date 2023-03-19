@@ -77,6 +77,6 @@ def process_mission(points):
                 use_power_percent += r_power
                 day += 1
                 use_power_percent += 20
-        results_point.appent(PointPD(day=day, current_power=use_power_percent, current_oxi=use_oxi))
+        results_point.append(PointPD(day=day, current_power=use_power_percent, current_oxi=use_oxi))
 
     return (results, results_point)
