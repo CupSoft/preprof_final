@@ -1,0 +1,40 @@
+{
+  "message": [
+    {
+      "points": [
+        {
+          "SH": 56,
+          "distance": 44
+        }
+      ]
+    },
+    {
+      "points": [
+        {
+          "SH": 4088,
+          "distance": 28
+        },
+        {
+          "SH": 504,
+          "distance": 43
+        },
+        {
+          "SH": 120,
+          "distance": 20
+        }
+      ]
+    },
+    {
+      "points": [
+        {
+          "SH": 6,
+          "distance": 10
+        },
+        {
+          "SH": 3,
+          "distance": 19
+        }
+      ]
+    }
+  ]
+}
