@@ -1,1 +1,1 @@
-# preprof_final
+# Flask SQLAlchemy шаблон
