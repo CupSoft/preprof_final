@@ -1,4 +1,6 @@
 from algo.shemas import DayPD
+from algo.shemas import PointPD
+
 from math import sin, pi
 
 
