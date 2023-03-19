@@ -1,4 +1,5 @@
 from algo.shemas import DayPD
+from math import sin, pi
 
 
 def process_mission(points):
@@ -18,9 +19,13 @@ def process_mission(points):
                 if now_dist_to - speed > 0:
                     now_dist_to -= speed
                     use_oxi += now_sh * 2
-                    use_power_percent += 80
-                    day += 1
                     use_power_percent += r_power
+                    day += 1
+                    use_power_percent += 20
+                    results.append(
+                        DayPD(num=day, current_sh=now_sh, current_power=use_power_percent, current_oxi=use_oxi,
+                              use_power=20 + r_power, use_oxi=now_sh * 2,
+                              distribution_engine=r_power, distribution_autoclave=20))
                     if r_power != 80:
                         flag = False
                     break
@@ -36,6 +41,10 @@ def process_mission(points):
                     now_sh = now_sh + now_sh * k
                     day += 1
                     use_power_percent += 43
+                    results.append(
+                        DayPD(num=day, current_sh=now_sh, current_power=use_power_percent, current_oxi=use_oxi,
+                              use_power=43, use_oxi=now_sh * oxi,
+                              distribution_engine=0, distribution_autoclave=43))
                     if oxi != 20:
                         flag = False
                     break
@@ -53,6 +62,10 @@ def process_mission(points):
                     use_power_percent += r_power
                     day += 1
                     use_power_percent += 20
+                    results.append(
+                        DayPD(num=day, current_sh=now_sh, current_power=use_power_percent, current_oxi=use_oxi,
+                              use_power=r_power + 20, use_oxi=now_sh * 2,
+                              distribution_engine=r_power, distribution_autoclave=20))
                     flag = False
                     break
             else:
