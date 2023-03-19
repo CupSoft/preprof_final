@@ -1,7 +1,8 @@
 from math import sin, pi
 poinsts = [
-    {"dist": 44,
-     "sh": 56,
+    {
+        "dist": 44,
+        "sh": 56,
     },
 ]
 
