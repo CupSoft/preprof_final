@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Space Calculator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-</head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Калькулятор ресурсов для космического корабля</h1>
+      <h1>Калькулятор ресурсов для космического корабля</h1>
     </header>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-</body>
-
+    <main>{% block content %} {% endblock %}</main>
+  </body>
 </html>

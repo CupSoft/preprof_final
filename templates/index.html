@@ -1,18 +1,19 @@
 {% extends "base.html" %} {% block content %}
 <div>
-  <h2>Введите маршрут одним из следующих способов:</h2>
+  <h2>Введите URL сервера или вставьте задание вручную:</h2>
   <div>
     <p>Введите URL и токен:</p>
-    <form action="/calculate" method="post">
-      <input type="text" name="url" placeholder="URL" />
-      <input type="text" name="token" placeholder="Токен" />
-      <input type="submit" value="Рассчитать" />
+    <form action="/calculate" method="get">
+      <input id="url_input" name="url" placeholder="https://dt.miet.ru/ppo_it_final" required >
+      <input id="token_input" name="token" placeholder="alskjdlkajsd" >
+
+      <input type="submit" value="Получить задание и расчитать" />
     </form>
   </div>
   <div>
-    <p>Введите JSON:</p>
-    <form action="/calculate" method="post">
-      <textarea name="json" placeholder="JSON"></textarea>
+    <p>или JSON задание:</p>
+    <form action="/calculate" method="get">
+      <textarea id="json" name="json" placeholder="JSON"></textarea>
       <input type="submit" value="Рассчитать" />
     </form>
   </div>
